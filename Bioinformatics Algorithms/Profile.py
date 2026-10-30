@@ -6,34 +6,27 @@ data="""0.229 0.193 0.253 0.217 0.193 0.277 0.181 0.193 0.373 0.277 0.349 0.217
 0.277 0.277 0.253 0.301 0.253 0.217 0.205 0.241 0.169 0.193 0.169 0.289"""
 profile=[]
 for row in data.splitlines():
-    
-    # split numbers in the row
     numbers = row.split()
-    
-    # convert each string to float
     float_numbers = []
     for num in numbers:
         float_numbers.append(float(num))
-    
-    # add this row to profile
     profile.append(float_numbers)
-
 def Profile(text,kk,profilee):
     prob=-1
     best_kmer=text[0:kk]
     for i in range(0,(len(text))-kk+1):
-        k_mer=string[i:i+k]
+        k_mer=text[i:i+kk]
         multiple=1
         for j in range(0,len(k_mer)):
             char=k_mer[j]
             if char=='A':
-                multiple=multiple*(profile[0][j])
+                multiple=multiple*(profilee[0][j])
             elif char=='C':
-                multiple=multiple*(profile[1][j])
+                multiple=multiple*(profilee[1][j])
             elif char=='G':
-                multiple=multiple*(profile[2][j])
+                multiple=multiple*(profilee[2][j])
             elif char=='T':
-                multiple=multiple*(profile[3][j])
+                multiple=multiple*(profilee[3][j])
         if(multiple>prob):
          prob=multiple
          best_kmer=k_mer
