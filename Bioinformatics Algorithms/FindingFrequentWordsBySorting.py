@@ -1,7 +1,7 @@
 def FindingFrequentWordsBySorting(Text,k):# AAGCAAAGGTGG ,k=2
     FrequentPatterns=set()
-    Count=[0]*len(Text)
-    Index=[0]*len(Text)
+    Count=[0]*(len(Text)-k+1)
+    Index=[0]*(len(Text)-k+1)
     for i in range (0,(len(Text)-k+1)):
         Pattern=Text[i:i+k]
         Index[i]=PatternToNumber(Pattern)
@@ -10,6 +10,8 @@ def FindingFrequentWordsBySorting(Text,k):# AAGCAAAGGTGG ,k=2
     for i in range (1,len(Text)-k+1):
         if SortedIndex[i]==SortedIndex[i-1]:
             Count[i]=Count[i-1]+1
+        else:
+            Count[i]=1
     maxCount=max(Count)
     for i in range (0,len(Text)-k+1):
         if(Count[i]==maxCount):
