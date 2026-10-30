@@ -1,12 +1,12 @@
 dna = "AGCAGCCTGCAATCCTTCGGTCTGAGTTCGAGTGGCCGCAGCGATTCGGCAGGTTGTCGTTATGATCGGATGCTGGACCCAACTGAAGAGCCGGGCCATTACAATTCTTGCTTGGGCTACCGCCAGCGCATGTTGAGCTTATACGTTTTCGTGGCGGCCACGGCTTCGCTTCAACGAATGCGATGTGACTGACCGGACCATTTCATCGCTTCAACGATTGTTTTCAATAGCTGAAGCTAATGATGTGAGCTGGCAGGCTTGCTCGCTTGGAACGTGACTCTGGTTCCCGGTGATTTGTAACTGCGAACGTACAAAAGCTTTTCATAGACAAGATCCTAGCCTGGGCCGTAGCTCCTATTATGTGACTCTTCTACAGAACGTTCATGTCACTTACGAAA"
 substring = "ACGTTTT"
-total_seq=[]
 d=3
 def approximate_pattern_count(text, pattern, d):
  count = 0 
- for i in range(0,(len(dna)-len(substring)+1)):
-    seq=dna[i:i+len(substring)]
-    for x,y in zip(seq,substring):
+ total_seq=[]
+ for i in range(0,(len(text)-len(pattern)+1)):
+    seq=text[i:i+len(pattern)]
+    for x,y in zip(seq,pattern):
       if(x!=y):
        count = count+1
     if(count<=d):
