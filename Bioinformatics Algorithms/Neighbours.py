@@ -6,7 +6,7 @@ def NewHammingDistance(p,q):#Call stack
  return count
 def Neighbours(pattern, d):
     if d==0:
-        return pattern
+        return [pattern]
     if len(pattern)==1:
         return['A','C','G','T']
     neighbourhood=[]
