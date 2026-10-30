@@ -14,4 +14,4 @@ def maxcount(counter):
         if(v==maxcounter):
             maxseq = maxseq + " " + k
     return maxseq
-maxcount(count)
+print(maxcount(count))
